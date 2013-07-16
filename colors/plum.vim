@@ -62,9 +62,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>H( "NonText", s:blue, [], "")  " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., '>' displayed when a double-wide character doesn't fit at the end of the line).
     call <SID>H( "SpecialKey", s:verylighterbg, [], "")  " Meta and special keys listed with ':map', also for text used to show unprintable characters in the text, 'listchars'. Generally: text that is displayed differently from what it really is.
 
-    " TODO fix
-    call <SID>H( "Search", [],  s:lightred, "")  " Last search pattern highlighting (see 'hlsearch'). Also used for highlighting the current line in the quickfix window and similar items that need to stand out.
-    call <SID>H( "IncSearch", s:lightred, [], "")  " 'incsearch' highlighting; also used for the text replaced with ':s///c'
+    call <SID>H( "Search", [],  s:pink, "")  " Last search pattern highlighting (see 'hlsearch'). Also used for highlighting the current line in the quickfix window and similar items that need to stand out.
+    call <SID>H( "IncSearch", s:pink, [], "")  " 'incsearch' highlighting; also used for the text replaced with ':s///c'
 
     call <SID>H( "StatusLine", s:blue, s:lighterbg, "none" )  " status line of current window
     call <SID>H( "StatusLineNC", s:lighterbg, s:greishblue, "inverse" )  " status lines of not-current windows
