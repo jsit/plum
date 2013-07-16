@@ -93,11 +93,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>H( "Linenr", s:verylighterbg, [], "" )  " line number for ':number' and ':#' commands, and when 'number' or 'relativenumber' option is set.
     call <SID>H( "CursorLineNr", s:darkerfg, [], "" )  " like LineNr when 'cursorline' is set for the cursor line.
 
-    " TODO
-    call <SID>H( "DiffAdd", s:green, [], "")  " diff mode: Added line
-    call <SID>H( "DiffDelete", s:red, [], "" )  " diff mode: Deleted line
-    call <SID>H( "DiffChange", s:red, [], "" )  " diff mode: Changed line
-    call <SID>H( "DiffText", s:foreground, [], "" )  " diff mode: Changed text within a changed line
+    call <SID>H( "DiffAdd", s:lighterbg, s:green, "")  " diff mode: Added line
+    call <SID>H( "DiffDelete", s:lighterbg, s:red, "" )  " diff mode: Deleted line
+    call <SID>H( "DiffChange", s:lighterbg, s:greishblue, "" )  " diff mode: Changed line
+    call <SID>H( "DiffText", s:lighterbg, s:red, "none" )  " diff mode: Changed text within a changed line
 
     if version >= 700
 
