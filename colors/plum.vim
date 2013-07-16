@@ -19,7 +19,7 @@ let s:darkpurple     = ["4b2b5c", 53]
 let s:blue           = ["345399", 27]
 let s:greishblue     = ["3a3c68", 63]
 let s:aqua           = ["2f6f7a", 31]
-let s:red            = ["8e3737", 52]
+let s:red            = ["b23e66", 52]
 let s:lightred       = ["ff6155", 197]
 let s:orange         = ["965E61", 174]
 let s:grey           = ["707070", 236]
@@ -156,7 +156,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>H( "Special", s:darkerfg, [], "")  " any special symbol
     call <SID>H( "Underlined", s:darkerfg, [], "underline" )  " text that stands out, HTML links
     call <SID>H( "Title", s:foreground, [],   "bold" )
-    "call <SID>H( "Error", s:white, s:red, "" )  " any erroneous construct
+    call <SID>H( "Error", [], s:red, "" )  " any erroneous construct
     call <SID>H( "Todo", s:pink, s:verylighterbg, "")  " anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     " Python Highlighting
