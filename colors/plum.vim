@@ -121,11 +121,10 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
     call <SID>H( "Conceal", s:verylighterbg, [], "" )  " placeholder characters substituted for concealed text (see 'conceallevel')
 
-    " TODO
-    call <SID>H( "SpellBad", s:verylighterbg, [], "" )  " Word that is not recognized by the spellchecker. This will be combined with the highlighting used otherwise
-    call <SID>H( "SpellCap", s:verylighterbg, [], "" )  " Word that should start with a capital. This will be combined with the highlighting used otherwise
-    call <SID>H( "SpellLocal", s:verylighterbg, [], "" )  " Word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise
-    call <SID>H( "SpellRare", s:verylighterbg, [], "" )  " Word that is recognized by the spellchecker as one that is hardly ever used. This will be combined with the highlighting used otherwise
+    call <SID>H( "SpellBad", [], [], "undercurl" )  " word that is not recognized by the spellchecker. This will be combined with the highlighting used otherwise
+    call <SID>H( "SpellCap", [], [], "" )  " word that should start with a capital. This will be combined with the highlighting used otherwise
+    call <SID>H( "SpellLocal", [], [], "" )  " word that is recognized by the spellchecker as one that is used in another region. This will be combined with the highlighting used otherwise
+    call <SID>H( "SpellRare", [], [], "" )  " word that is recognized by the spellchecker as one that is hardly ever used. This will be combined with the highlighting used otherwise
 
     end
 
