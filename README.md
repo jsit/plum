@@ -4,10 +4,10 @@ Plum is a simple dark colorscheme for vim.
 
 ### Options
 
-**g:plum\_cursorline\_highlight\_only\_linenr**: when `cursorline` is set, only the current the line number is highlighted.
-```vim
+ ```vim
 let g:plum_cursorline_highlight_only_linenr = 0   " default
-```
+```   
+Set this option to 1 to highlight only the current the line number when `cursorline` is set.
 
 
 ### Palette
