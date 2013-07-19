@@ -34,6 +34,8 @@ All screenshots have been taken from MacVim (font: GohuFont 13, language: go).
 
 #### dark background
 ![Screenshot](extra/dark.jpg "The plum colorscheme with dark background (language: go)")   
+[see full size](https://raw.github.com/gcmt/plum.vim/master/extra/dark.jpg)
 
 #### light background
 ![Screenshot](extra/light.jpg "The plum colorscheme with light background (language: go)")   
+[see full size](https://raw.github.com/gcmt/plum.vim/master/extra/light.jpg)
