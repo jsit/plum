@@ -13,13 +13,11 @@ Plum is a vim colorscheme for any occasion.
     colorscheme plum
     ```
 
-3. *(optional)* Set in your `.vimrc` the desired colorscheme options: 
-
+3. Set in your `.vimrc` the desired colorscheme options: 
     
-    * **g:plum_cursorline_highlight_only_linenr**: set this option to 1 (default is 0) to highlight only the current the line number when `cursorline` is set.
-   
-  
-4. *(optional)* To switch between dark and light background you can set the following mapping in your `.vimrc`:
+    - **g:plum_cursorline_highlight_only_linenr**: set this option to 1 (default is 0) to highlight only the current the line number when `cursorline` is set.
+     
+4. To switch between dark and light background set the following mapping in your `.vimrc`:
 
     ```vim
     nnoremap <silent> <F7> :exe 'set bg=' . (&bg == 'dark' ? 'light' : 'dark')<CR>   
