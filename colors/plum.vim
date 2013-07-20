@@ -33,7 +33,6 @@
 "
 
 
-
 " Init colors
 
 " dark background colors
@@ -73,20 +72,13 @@ let s:light_purple         = ["8959a8", 97]
 let s:light_green          = ["718c00", 64]  
 
 
-
 " Init settings
 
 let plum_cursorline_highlight_only_linenr = 
     \ get(g:, "plum_cursorline_highlight_only_linenr", 0) 
 
 
-
 " Init
-
-" Set background to `light` if no background is set
-if empty(&bg)
-    set bg=light  
-endif
 
 let s:curr_bg = &bg
 
@@ -96,7 +88,6 @@ if exists("syntax_on")
 endif
 
 let g:colors_name = "plum"
-
 
 
 " Set colors
@@ -288,7 +279,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
     delf <SID>H
 endif
-
 
 
 " FIXME 
