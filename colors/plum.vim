@@ -1,36 +1,12 @@
-"
+" ============================================================================
 " File: plum.vim
 " Description: Plum, a vim colorscheme for any occasion. 
 " Mantainer: Giacomo Comitti - https://github.com/gcmt
 " Url: https://github.com/gcmt/plum.vim
+" License: MIT
 " Version: 0.2
-" Last Changed: 19 Jul 2013
-"
-"
-" usage: 
-"
-"   1. copy `plum.vim` to `~/.vim/colors`
-"
-"   2. set in your `.vimrc` the desired default background before setting the colorscheme:
-"       
-"       set bg=dark
-"       colorscheme plum
-"
-"   3. (optional) to switch between dark and light background you can set the following mapping in your `.vimrc`:
-"
-"       nnoremap <silent> <F7> :exe 'set bg=' . (&bg == 'dark' ? 'light' : 'dark')<CR>
-"       
-"
-" options:
-"
-"   - g:plum_cursorline_highlight_only_linenr: when cursorline is set, only
-"     current the line number is highlighted.
-"
-"
-" TODO
-"
-"   - fix terminal colors for dark background
-"
+" Last Changed: 21 Jul 2013
+" ============================================================================
 
 
 " Init colors
@@ -281,8 +257,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 endif
 
 
-" FIXME 
-" Restore the background (needed for terminal vim):
+" FIXME Restore the background (needed for terminal vim):
 " &bg is turned to `light` for no reason after setting the colorscheme.
 " Am I missing something?
 exec "set bg=" . s:curr_bg  
