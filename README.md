@@ -1,32 +1,71 @@
 ## Plum colorscheme
 
-Plum is a vim colorscheme for any occasion.
+**v0.2**
 
-### Usage
+Plum is a vim colorscheme that support both light and dark background.
+If you are a Mac OS X **Plum** provides some functionalities that in conjunction 
+with autocommands allow to automatically switch between *dark* and *light* background 
+as the ambient light changes.
 
-1. Copy `plum.vim` to `~/.vim/colors` or use your favorite plugin manager such as 
+
+### Installation
+
+1. Copy the plugin folder to `~/.vim` or use a plugin manager such as 
 [Vundle](https://github.com/gmarik/vundle), [Pathogen](https://github.com/tpope/vim-pathogen) 
 or [Neobundle](https://github.com/Shougo/neobundle.vim).
 
-2. Set in your `.vimrc` the desired default background before setting the colorscheme:
-
-    ```vim
-    set bg=dark
-    colorscheme plum
+2. If you're running Mac OS X and want to use ambient light detection to switch background accordingly,
+    move to the plugin root directory and run 
+    ```
+    $ ./install.sh
     ```
 
-3. Set in your `.vimrc` the desired colorscheme options: 
+### Usage
 
-    ```vim
-    " set this option to 1 (default is 0) to highlight only the current the line number when 'cursorline' is on.                                                                                                                                  
-    let g:plum_cursorline_highlight_only_linenr = 1
-    ```
-     
-4. To switch between dark and light background set the following mapping in your `.vimrc`:
+Set in your `.vimrc` the desired default background before setting the colorscheme:
+```vim
+set bg=dark
+colorscheme plum
+```
 
-    ```vim
-    nnoremap <silent> <F7> :exe 'set bg=' . (&bg == 'dark' ? 'light' : 'dark')<CR>   
-    ```
+To easily switch between dark and light background you might find useful the following mapping:
+```vim
+nnoremap <silent> <F7> :exe 'set bg=' . (&bg == 'dark' ? 'light' : 'dark')<CR>   
+```
+
+If you are running Mac OS X you can take advantage of the camera in front of you for detecting 
+the ambient light and change the colorscheme background accordingly.   
+**Plum** defines for you the function `plum#SetBgAccordingToAmbientLight()` and you can use it
+whenever you what to set the background (*dark* or *light*) according to the current ambient light.
+Normally you want to use it in conjuction with autocommands, e.g.:
+```vim
+au VimEnter,FocusLost * call plum#SetBgAccordingToAmbientLight() 
+```
+
+
+### Settings
+
+Set in your `.vimrc` the options you find useful: 
+
+```vim
+let g:plum_cursorline_highlight_only_linenr = 0
+" Set this option to 1 (default is 0) to highlight only the current the line number 
+" when 'cursorline' is on.                                                                                                                                  
+
+let g:plum_threshold = 120000
+" When the ambient light sensor read a value below this option, the background is 
+" set to 'dark', otherwise is set to 'light'. The default value is somewhat arbitrary: 
+" the values read by the sensor span the range [0 - 67,092,408] but I've found that 
+" indoor the range is roughly [0 - 2,000,000].
+" Only below 120,000 it sems reasonable to set a dark background.
+
+let g:plum_debug = 0
+" Set this option to 1 to output the ambient light read by the sensor whenever the
+" plum#SetBgAccordingToAmbientLight() is called. You might find useful to output of 
+the ambient light sensor when the default threshold value does not suit your tastes
+and you want to find the right one.
+```
+
 
 ### Screenshots
 
