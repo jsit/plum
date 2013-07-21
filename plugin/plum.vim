@@ -12,14 +12,7 @@
 " Init
 " ----------------------------------------------------------------------------
 
-if  !has('mac') 
-    echohl WarningMsg |
-        \ echomsg "[plum] You need to run Mac OS X to take advantage of ambient light detection." |
-        \ echohl None
-    finish
-endif
-
-if exists("g:plum_loaded")
+if !has('mac') || exists("g:plum_loaded")
     finish
 endif
 let g:plum_loaded = 1
@@ -37,7 +30,7 @@ let g:plum_threshold = get(g:, "plum_threshold", 120000)
 " plum#SetBgAccordingToAmbientLight() is called.
 let g:plum_debug = get(g:, "plum_debug", 0)
 
-" Internal usage only
+" Internal use only
 let g:plum_ambient_light_cmd = ""
 
 
