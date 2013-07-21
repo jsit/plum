@@ -37,21 +37,26 @@ let g:plum_threshold = get(g:, "plum_threshold", 120000)
 " plum#SetBgAccordingToAmbientLight() is called.
 let g:plum_debug = get(g:, "plum_debug", 0)
 
+" Internal usage only
+let g:plum_ambient_light_cmd = ""
+
 
 " Main function
 " ----------------------------------------------------------------------------
 
 fu! plum#SetBgAccordingToAmbientLight()
     " The location of the 'plum_ambient_light' binary
-    let cmd = fnameescape(globpath(&runtimepath, 'bin/plum_ambient_light'))
-    if empty(cmd)
-        echohl WarningMsg |
-            \ echomsg "[plum] Run ./install.sh from the plugin directory to complete the installation before using ambient light detection." |
-            \ echohl None
-        return  
+    if empty(g:plum_ambient_light_cmd)
+        let g:plum_ambient_light_cmd = fnameescape(globpath(&runtimepath, 'bin/plum_ambient_light'))
+        if empty(g:plum_ambient_light_cmd)
+            echohl WarningMsg |
+                \ echomsg "[plum] Run ./install.sh from the plugin directory to complete the installation before using ambient light detection." |
+                \ echohl None
+            return  
+        endif
     endif
 
-    let out = system(cmd)
+    let out = system(g:plum_ambient_light_cmd)
     if v:shell_error != 0
         echohl WarningMsg |
             \ echomsg "[plum] Failed to connect to the ambient light sensor." |
