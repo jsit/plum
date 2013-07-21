@@ -44,7 +44,7 @@ let g:plum_ambient_light_cmd = ""
 " Main function
 " ----------------------------------------------------------------------------
 
-fu! plum#SetBgAccordingToAmbientLight()
+fu! PlumSetBackground()
     " The location of the 'plum_ambient_light' binary
     if empty(g:plum_ambient_light_cmd)
         let g:plum_ambient_light_cmd = fnameescape(globpath(&runtimepath, 'bin/plum_ambient_light'))
@@ -72,3 +72,7 @@ fu! plum#SetBgAccordingToAmbientLight()
         endif
     endif
 endfu
+
+if get(g:, "plum_set_bg_at_start", 1)
+    call PlumSetBackground()
+endif
