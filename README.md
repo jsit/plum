@@ -37,8 +37,8 @@ If you are running Mac OS X you can take advantage of the camera in front of you
 the ambient light and change the colorscheme background accordingly.
 **Plum** defines for you the function `plum#SetBgAccordingToAmbientLight()` and you can use it
 whenever you what to set the background (*dark* or *light*) according to the current ambient light.
-Normally you want to use it in conjuction with autocommands, e.g.:
-```vim
+Normally you want to use it in conjunction with autocommands, e.g.:
+```                                    vim
 au VimEnter,FocusLost * call plum#SetBgAccordingToAmbientLight()
 ```
 
@@ -57,7 +57,7 @@ let g:plum_threshold = 120000
 " set to 'dark', otherwise is set to 'light'. The default value is somewhat arbitrary:
 " the values read by the sensor span the range [0 - 67,092,408] but I've found that
 " indoor the range is roughly [0 - 2,000,000].
-" Only below 120,000 it sems reasonable to set a dark background.
+" Only below 120,000 it seems reasonable to set a dark background.
 
 let g:plum_debug = 0
 " Set this option to 1 to output the ambient light read by the sensor whenever the
@@ -69,7 +69,7 @@ let g:plum_debug = 0
 
 ### Screenshots
 
-All screenshots have been taken from MacVim (font: GohuFont 13, language: go).
+All screenshots have been taken from MacVim (font: GohuFont 14, language: go).
 
 #### dark background
 ![Screenshot](extra/dark.jpg "The plum colorscheme with dark background (language: go)")

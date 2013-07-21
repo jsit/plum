@@ -44,7 +44,7 @@ int main(void)
     serviceObject = IOServiceGetMatchingService(kIOMasterPortDefault,
             IOServiceMatching("AppleLMUController"));
     if (!serviceObject) {
-        fprintf(stderr, "failed to find th ambient light sensor");
+        fprintf(stderr, "failed to find the ambient light sensor");
         exit(1);
     }
 
