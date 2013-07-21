@@ -33,11 +33,11 @@ nnoremap <silent> <F7> :exe 'set bg=' . (&bg == 'dark' ? 'light' : 'dark')<CR>
 
 If you are running Mac OS X you can take advantage of the camera in front of you for detecting
 the ambient light and change the colorscheme background accordingly.
-Plum defines for you the function `plum#SetBgAccordingToAmbientLight()` so that you can use it
+Plum defines for you the function `PlumSetBackground()` so that you can use it
 whenever you what to set the background (_dark_ or _light_) according to the current ambient light.
 Normally you want to use it in conjunction with autocommands, e.g.:
 ```                                    vim
-au VimEnter,FocusLost * call plum#SetBgAccordingToAmbientLight()
+au VimEnter,FocusLost * call PlumSetBackgroud()
 ```
 
 
@@ -49,6 +49,14 @@ Set in your `.vimrc` the options you find useful:
 let g:plum_cursorline_highlight_only_linenr = 0
 " Set this option to 1 (default is 0) to highlight only the current the line number
 " when 'cursorline' is on.
+
+let g:plum_set_bg_at_start = 1
+" If you are using Mac OS X the background is automatically set according to the 
+" current ambient light. This works just like setting an autocommand for the 
+" VimEnter event but usually autocommands are executed at the end of all the startup 
+" initialization and you'll end up seeing some delay in background setting. 
+" Setting this option to 1 (default) will considerably speed up background setting 
+" at startup.
 
 let g:plum_threshold = 120000
 " When the ambient light sensor read a value below this value, the background is
