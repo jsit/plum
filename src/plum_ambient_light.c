@@ -27,7 +27,8 @@
 
 static mach_port_t dataPort = 0;
 
-enum {
+enum 
+{
     kGetSensorReadingID = 0,
     kGetLEDBrightnessID = 1,
     kSetLEDBrightnessID = 2,
@@ -35,7 +36,7 @@ enum {
 };
 
 
-int main(void)
+int main()
 {
     kern_return_t kr;
     io_service_t serviceObject;
