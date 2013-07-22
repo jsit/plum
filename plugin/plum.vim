@@ -38,7 +38,7 @@ let g:plum_ambient_light_cmd = ""
 " ----------------------------------------------------------------------------
 
 fu! PlumSetBackground()
-    " The location of the 'plum_ambient_light' binary
+    " Find the location of the 'plum_ambient_light' command
     if empty(g:plum_ambient_light_cmd)
         let g:plum_ambient_light_cmd = fnameescape(globpath(&runtimepath, 'bin/plum_ambient_light'))
         if empty(g:plum_ambient_light_cmd)
@@ -51,7 +51,7 @@ fu! PlumSetBackground()
 
     " Get the current ambient light
     let out = system(g:plum_ambient_light_cmd)
-    if v:shell_error != 0
+    if v:shell_error != 0 || empty(out)
         echohl WarningMsg |
             \ echomsg "[plum] Failed to connect to the ambient light sensor." |
             \ echohl None
@@ -59,15 +59,13 @@ fu! PlumSetBackground()
     endif
 
     " Change the current background if needed
-    if !empty(out)
-        let al = str2nr(out)
-        let newbg = al < g:plum_threshold ? "dark" : "light"
-        if newbg != &bg
-            exec "set bg=" . newbg 
-        endif
-        if g:plum_debug
-            echom "[plum] at " . strftime("%X") . " ambient light: " . al
-        endif
+    let al = str2nr(out)
+    let newbg = al < g:plum_threshold ? "dark" : "light"
+    if newbg != &bg
+        exec "set bg=" . newbg 
+    endif
+    if g:plum_debug
+        echom "[plum] at " . strftime("%X") . " ambient light: " . al
     endif
 endfu
 
