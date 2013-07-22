@@ -49,6 +49,7 @@ fu! PlumSetBackground()
         endif
     endif
 
+    " Get the current ambient light
     let out = system(g:plum_ambient_light_cmd)
     if v:shell_error != 0
         echohl WarningMsg |
@@ -57,9 +58,13 @@ fu! PlumSetBackground()
         return 
     endif
 
+    " Change the current background if needed
     if !empty(out)
         let al = str2nr(out)
-        exec "set bg=" . (al < g:plum_threshold ? "dark" : "light") 
+        let newbg = al < g:plum_threshold ? "dark" : "light"
+        if newbg != &bg
+            exec "set bg=" . newbg 
+        endif
         if g:plum_debug
             echom "[plum] at " . strftime("%X") . " ambient light: " . al
         endif
