@@ -34,10 +34,10 @@ nnoremap <silent> <F7> :exe 'set bg=' . (&bg == 'dark' ? 'light' : 'dark')<CR>
 If you are running Mac OS X you can take advantage of the camera in front of you for detecting
 the ambient light and change the colorscheme background accordingly.
 Plum defines for you the function `PlumSetBackground()` so that you can use it
-whenever you what to set the background (_dark_ or _light_) according to the current ambient light.
+whenever you what to set the background, _dark_ or _light_, according to the current ambient light.
 Normally you want to use it in conjunction with autocommands, e.g.:
 ```                                    vim
-au VimEnter,FocusLost * call PlumSetBackgroud()
+au FocusLost,CursorHold * call PlumSetBackgroud()
 ```
 
 
