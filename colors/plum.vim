@@ -101,7 +101,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
     call <SID>H( "Cursor", [], [s:dark_aqua, s:light_lightred], "")  " the character under the cursor
 
-    call <SID>H( "NonText", [s:dark_blue, s:light_blue], [], "")  " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., '>' displayed when a double-wide character doesn't fit at the end of the line).
+    call <SID>H( "NonText", [s:dark_blue, s:light_blue], [], "none")  " '~' and '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., '>' displayed when a double-wide character doesn't fit at the end of the line).
     call <SID>H( "SpecialKey", [s:dark_lighterbg2, s:light_lightgrey], [s:dark_bg, s:light_bg], "none")  " Meta and special keys listed with ':map', also for text used to show unprintable characters in the text, 'listchars'. Generally: text that is displayed differently from what it really is.
 
     call <SID>H( "Search", [],  [s:dark_cerise, s:light_yellow], "")  " Last search pattern highlighting (see 'hlsearch'). Also used for highlighting the current line in the quickfix window and similar items that need to stand out.
