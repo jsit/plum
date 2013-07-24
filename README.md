@@ -1,8 +1,8 @@
 ## Plum colorscheme
 
 Plum is a vim colorscheme that support both light and dark background.
-If you are a Mac OS X, Plum provides some functionalities that in conjunction
-with autocommands allow to automatically switch between *dark* and *light* background
+If you are a Mac OS X, Plum provides some functionalities that
+allow you to automatically switch between *dark* and *light* background
 as the ambient light changes.
 
 
@@ -33,10 +33,10 @@ nnoremap <silent> <F7> :exe 'set bg=' . (&bg == 'dark' ? 'light' : 'dark')<CR>
 
 If you are running Mac OS X you can take advantage of the camera in front of you for detecting
 the ambient light and change the colorscheme background accordingly.
-Plum defines for you the function `PlumSetBackground()` so that you can use it
-whenever you what to set the background, _dark_ or _light_, according to the current ambient light.
-Normally you want to use it in conjunction with autocommands, e.g.:
-```                                    vim
+By default Plum set the right background as Vim starts (unless you turn off the `g:plum_set_bg_at_start` 
+variable) but with the function `PlumSetBackground()` you can change the background whenever you
+want. Normally you want to use this function in conjunction with autocommands, e.g.:
+```vim
 au FocusLost,CursorHold * call PlumSetBackgroud()
 ```
 
