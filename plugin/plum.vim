@@ -5,7 +5,7 @@
 " Url: https://github.com/gcmt/plum.vim
 " License: MIT
 " Version: 0.2
-" Last Changed: 21 Jul 2013
+" Last Changed: 30 Jul 2013
 " ============================================================================
 
 
@@ -40,7 +40,7 @@ let g:plum_ambient_light_cmd = ""
 fu! PlumSetBackground()
     " Find the location of the 'plum_ambient_light' command
     if empty(g:plum_ambient_light_cmd)
-        let g:plum_ambient_light_cmd = fnameescape(globpath(&runtimepath, 'bin/plum_ambient_light'))
+        let g:plum_ambient_light_cmd = fnameescape(globpath(&rtp, 'bin/plum_ambient_light'))
         if empty(g:plum_ambient_light_cmd)
             echohl WarningMsg |
                 \ echomsg "[plum] Run ./install.sh from the plugin directory to complete the installation before using ambient light detection." |
@@ -50,8 +50,8 @@ fu! PlumSetBackground()
     endif
 
     " Get the current ambient light
-    let out = system(g:plum_ambient_light_cmd)
-    if v:shell_error != 0 || empty(out)
+    let al = system(g:plum_ambient_light_cmd)
+    if v:shell_error != 0 || empty(al)
         echohl WarningMsg |
             \ echomsg "[plum] Failed to connect to the ambient light sensor." |
             \ echohl None
@@ -59,8 +59,7 @@ fu! PlumSetBackground()
     endif
 
     " Change the current background if needed
-    let al = str2nr(out)
-    let newbg = al < g:plum_threshold ? "dark" : "light"
+    let newbg = str2nr(al) < g:plum_threshold ? "dark" : "light"
     if newbg != &bg
         exec "set bg=" . newbg 
     endif
