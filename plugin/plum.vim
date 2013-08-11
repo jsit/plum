@@ -5,7 +5,7 @@
 " Url: https://github.com/gcmt/plum.vim
 " License: MIT
 " Version: 0.2
-" Last Changed: 30 Jul 2013
+" Last Changed: 8 Aug 2013
 " ============================================================================
 
 
@@ -59,10 +59,12 @@ fu! PlumSetBackground()
     endif
 
     " Change the current background if needed
-    let newbg = str2nr(al) < g:plum_threshold ? "dark" : "light"
+    let newbg = al < g:plum_threshold ? "dark" : "light"
     if newbg != &bg
         exec "set bg=" . newbg 
     endif
+
+    " Display the current ambient light reading if required
     if g:plum_debug
         echom "[plum] at " . strftime("%X") . " ambient light: " . al
     endif
