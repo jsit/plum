@@ -190,7 +190,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>H( "Label", [s:dark_pink, s:light_purple], [], "" )  "  case, default, etc.
     call <SID>H( "Repeat", [s:dark_orange, s:light_orange], [], "" )  " for, do, while, etc.
     call <SID>H( "Comment", [s:dark_paleblue, s:light_lightgrey], [], "")  " any comment
-    call <SID>H( "Operator", [s:dark_fg, s:light_aqua], [], "none" )  " 'sizeof', '+', '*', etc.
+    call <SID>H( "Operator", [s:dark_aqua, s:light_aqua], [], "none" )  " 'sizeof', '+', '*', etc.
     call <SID>H( "Keyword", [s:dark_fg, s:light_fg], [], "" )  " any other keyword
     call <SID>H( "Exception", [s:dark_cerise, s:light_lightred], [], "" )  " try, catch, throw
     call <SID>H( "PreProc", [s:dark_darkerfg, s:light_purple], [], "" )  " generic Preprocessor
