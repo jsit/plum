@@ -142,7 +142,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
     if version >= 700
 
-    call <SID>H( "CursorLineNr", [s:dark_darkerfg, s:light_grey], [], "" )  " like LineNr when 'cursorline' is set for the cursor line.
+    call <SID>H( "CursorLineNr", [s:dark_aqua, s:light_lightred], [], "" )  " like LineNr when 'cursorline' is set for the cursor line.
     if g:plum_cursorline_highlight_only_linenr
         call <SID>H( "CursorLine", [], [s:dark_bg, s:light_bg], "none" )  " the screen line that the cursor is in when 'cursorline' is set
     else
