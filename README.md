@@ -65,13 +65,8 @@ let g:plum_threshold = 120000
 " sensor span the range [0 - 67,092,408] but I've found that indoor the range
 " is roughly [0 - 2,000,000]. To me, only below 120,000 (default) it seems
 " reasonable to set a dark background but I also know this is just my preference.
-" To find the value right for you check out the next option.
-
-let g:plum_debug = 0
-" Set this option to 1 to output the ambient light read by the sensor whenever the
-" plum#SetBgAccordingToAmbientLight() is called. You might find this useful when
-" the default threshold value does not suit your tastes and you want to find the
-" right one for you.
+" To find the value right you can experiment directly with the 'light' binary you 
+" find in the 'bin' directory.
 ```
 
 
