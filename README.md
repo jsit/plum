@@ -65,8 +65,8 @@ let g:plum_threshold = 120000
 " sensor span the range [0 - 67,092,408] but I've found that indoor the range
 " is roughly [0 - 2,000,000]. To me, only below 120,000 (default) it seems
 " reasonable to set a dark background but I also know this is just my preference.
-" To find the value right you can experiment directly with the 'light' binary you 
-" find in the 'bin' directory.
+" If the default value does not fit for you, to find the right one you can experiment 
+" directly with the 'light' executable in the 'bin' directory.
 ```
 
 
