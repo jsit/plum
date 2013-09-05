@@ -35,7 +35,7 @@ If you are running Mac OS X  and a camera is available, Plum can detect the
 current ambient light and change the colorscheme background accordingly.
 By default Plum set the right background as Vim starts (unless you turn off the `g:plum_set_bg_at_start` 
 variable) but with the function `PlumSetBackground()` you can change the background whenever you
-want, normally with autocommands events, e.g.:
+want, normally with autocommand events, e.g.:
 ```vim
 au FocusLost,CursorHold * call PlumSetBackgroud()
 ```
@@ -70,11 +70,11 @@ let g:plum_threshold = 120000
 
 let g:plum_force_dark = 0
 " Set this option to 1 to force a dark background regardless of the current
-" ambiant light.
+" ambient light.
 
 let g:plum_force_light = 0
 " Set this option to 1 to force a light background regardless of the current
-" ambiant light.
+" ambient light.
 ```
 
 
