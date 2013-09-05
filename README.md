@@ -68,13 +68,9 @@ let g:plum_threshold = 120000
 " If the default value does not fit for you, to find the right one you can experiment 
 " directly with the 'light' executable in the 'bin' directory.
 
-let g:plum_force_dark = 0
-" Set this option to 1 to force a dark background regardless of the current
-" ambient light.
-
-let g:plum_force_light = 0
-" Set this option to 1 to force a light background regardless of the current
-" ambient light.
+let g:plum_force_bg = ""
+" Set this option to `light` or `dark` to force a specific background
+" regardless of the current ambient light.
 ```
 
 

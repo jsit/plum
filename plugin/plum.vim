@@ -4,8 +4,8 @@
 " Mantainer: Giacomo Comitti - https://github.com/gcmt
 " Url: https://github.com/gcmt/plum.vim
 " License: MIT
-" Version: 0.3
-" Last Changed: 25 Aug 2013
+" Version: 0.4
+" Last Changed: 5 Sep 2013
 " ============================================================================
 
 
@@ -17,14 +17,6 @@ if !has('mac') || exists("g:plum_loaded")
 endif
 let g:plum_loaded = 1
 
-
-" Initialize settings
-" ----------------------------------------------------------------------------
-
-" The default value is somewhat arbitrary. The range of the sensor readings is
-" [0 - 67,092,408] but indoor I've found that the range is roughly [0 - 2,000,000].
-" Only below 120,000 it sems reasonable to set a dark background.
-let g:plum_threshold = get(g:, "plum_threshold", 120000)
 
 " Internal use only
 let g:plum_ambient_light_cmd = fnameescape(globpath(&rtp, 'bin/plum_ambient_light'))
@@ -42,20 +34,16 @@ endfu
 
 fu! PlumSetBackground()
 
-    if get(g:, "plum_force_dark", 0)
-        call s:setBg("dark")
-        return
-    endif
-
-    if get(g:, "plum_force_light", 0)
-        call s:setBg("light")
+    let bg = get(g:, "plum_force_bg", "")
+    if bg == "dark" || bg == "light"
+        call s:setBg(bg)
         return
     endif
 
     if !empty(g:plum_ambient_light_cmd)
         let al = system(g:plum_ambient_light_cmd)
         if v:shell_error == 0 && !empty(al)
-            call s:setBg(al < g:plum_threshold ? "dark" : "light")
+            call s:setBg(al < get(g:, "plum_threshold", 120000) ? "dark" : "light")
         else
             echohl WarningMsg |
                 \ echomsg "[plum] Failed to connect to the ambient light sensor." |
