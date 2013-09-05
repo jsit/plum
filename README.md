@@ -14,9 +14,9 @@ or [Neobundle](https://github.com/Shougo/neobundle.vim).
 
 2. If you're running Mac OS X and want to use ambient light detection you need to move to the
 plugin root directory and run
-    ```
-    $ ./install.sh
-    ```
+```
+$ ./install.sh
+```
 
 ### Usage
 
@@ -31,11 +31,11 @@ To easily switch between dark and light background you might find useful the fol
 nnoremap <silent> <F7> :exe 'set bg=' . (&bg == 'dark' ? 'light' : 'dark')<CR>
 ```
 
-If you are running Mac OS X you can take advantage of the camera in front of you for detecting
-the ambient light and change the colorscheme background accordingly.
+If you are running Mac OS X  and a camera is available, Plum can detect the
+current ambient light and change the colorscheme background accordingly.
 By default Plum set the right background as Vim starts (unless you turn off the `g:plum_set_bg_at_start` 
 variable) but with the function `PlumSetBackground()` you can change the background whenever you
-want. Normally you want to use this function in conjunction with autocommands, e.g.:
+want, normally with autocommands events, e.g.:
 ```vim
 au FocusLost,CursorHold * call PlumSetBackgroud()
 ```
@@ -67,6 +67,14 @@ let g:plum_threshold = 120000
 " reasonable to set a dark background but I also know this is just my preference.
 " If the default value does not fit for you, to find the right one you can experiment 
 " directly with the 'light' executable in the 'bin' directory.
+
+let g:plum_force_dark = 0
+" Set this option to 1 to force a dark background regardless of the current
+" ambiant light.
+
+let g:plum_force_light = 0
+" Set this option to 1 to force a light background regardless of the current
+" ambiant light.
 ```
 
 
