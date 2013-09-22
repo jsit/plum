@@ -154,7 +154,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
     call <SID>H( "PMenuThumb", [s:dark_grey, s:light_grey1], [s:dark_lightgrey, s:light_grey2], "none" )  " popup menu: Thumb of the scrollbar
 
     call <SID>H( "TabLine", [s:dark_fg, s:light_grey1], [s:dark_lighterbg2, s:light_grey4], "none" )  " tab pages line, not active tab page label
-    call <SID>H( "TabLineSel", [s:dark_bg, s:light_bg], [s:dark_lightblue, s:light_lightblue], "none" )  " tab pages line, active tab page label
+    call <SID>H( "TabLineSel", [s:dark_bg, s:dark_darkerfg], [s:dark_lightblue, s:light_lightblue], "none" )  " tab pages line, active tab page label
     call <SID>H( "TabLineFill", [s:dark_lightgrey, s:light_grey2], [s:dark_lighterbg2, s:light_grey4], "none" )  " tab pages line, where there are no labels
 
     endif
